@@ -207,9 +207,4 @@ LEGO.AI reduces this friction by **automating discovery, optimization, and oppor
 * Deploy agents as independent microservices
 * Integrate with GitHub Copilot Extensions
 
----
 
-
-
-If you want, I can also show you **3 small things that make the README look much more “hackathon-winning”** (badges, screenshots, and architecture diagram).
-```
