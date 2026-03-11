@@ -1,8 +1,12 @@
 import logging
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
 from app.api.routes import router
 from scripts.seed_repositories import seed
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -36,6 +40,16 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# ✅ ADD CORS HERE
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],   # allows React frontend
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# API routes
 app.include_router(router)
 
 
